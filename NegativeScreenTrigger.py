@@ -66,7 +66,13 @@ def active_window_process_name():
    
         print(currentWindow)
         time.sleep(0.05)
-        if((previousWindow == "terminal.exe" and currentWindow != "terminal.exe") or (currentWindow == "terminal.exe" and previousWindow != "terminal.exe")):
+        if(     
+                !((previousWindow == "terminal.exe" and currentWindow == "metaeditor.exe") or (previousWindow == "metaeditor.exe" and currentWindow == "terminal.exe")) and
+                ((previousWindow == "terminal.exe" and currentWindow != "terminal.exe") or (currentWindow == "terminal.exe" and previousWindow != "terminal.exe") or
+                 (previousWindow == "metaeditor.exe" and currentWindow != "metaeditor.exe") or (currentWindow == "metaeditor.exe" and previousWindow != "metaeditor.exe")
+          
+          
+          ):
             # trigger the inversion
 
             # Holds down the alt key
